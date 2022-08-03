@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ImanRjb\\MongoDB\\": "src/"
+            "ImanRjb\\Mongodb\\": "src/"
         }
     },
     "extra": {
