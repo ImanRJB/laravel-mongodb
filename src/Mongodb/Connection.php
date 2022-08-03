@@ -7,9 +7,6 @@ use ImanRjb\Mongodb\Query\Builder;
 
 class Connection extends JenssegersConnection
 {
-    /**
-     * @var \MongoDB\Driver\Session
-     */
     protected $session;
 
 
