@@ -1,4 +1,4 @@
-# Laravel Mongodb Transactions
+# Laravel Mongodb (Support Transactions)
 
 ### Introduction
 
@@ -11,6 +11,11 @@ Jensseger's laravel-mongodb extension package is very popular among Laravel deve
 ### Installation
 
 Regarding the use of packages, it is necessary to replace [Jenssegers/laravel-mongodb](https://packagist.org/packages/jenssegers/mongodb#installation):
+
+Install by composer
+```bash
+composer require imanrjb/laravel-mongodb
+```
 
 Laravel
 ```php
@@ -31,17 +36,15 @@ Eloquent
 Eloquent only expands on transaction-related content, so it directly replaces [Jenssegers/laravel-mongodb](https://github.com/jenssegers/laravel-mongodb#eloquent)
 
 ```php
-//use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
-use ImanRjb\Mongodb\Eloquent\Model as Eloquent;
+use ImanRjb\Mongodb\Eloquent\Model;
 
-class User extends Eloquent {}
+class User extends Model {}
 ```
 
 ```php
-//use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
-use ImanRjb\Mongodb\Eloquent\Model as Eloquent;
+use ImanRjb\Mongodb\Eloquent\Model;
 
-class MyModel extends Eloquent {
+class MyModel extends Model {
 
     protected $connection = 'mongodb';
 
@@ -53,15 +56,15 @@ For more Eloquent documentation see (http://laravel.com/docs/eloquent)
 ### Usage
 
 ```php
-DB::beginTransaction();
+DB::connection('mongodb')->beginTransaction();
 
 try {
     User::insert($userData);
     UserInfo::insert($userInfoData);
     
-    DB::commit();
+    DB::connection('mongodb')->commit();
 } catch (\Exception $e) {
-    DB::rollBack();
+    DB::connection('mongodb')->rollBack();
     throw $e;
 }
 ```
