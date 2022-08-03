@@ -1,0 +1,29 @@
+{
+    "name": "imanrjb/laravel-mongodb",
+    "description": "Extend Jenssegers/laravel-mongodb to support transaction function",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Iman RJB",
+            "email": "iman.rjb@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "jenssegers/mongodb": "^3.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "ImanRjb\\MongoDB\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ImanRjb\\Mongodb\\MongodbServiceProvider"
+            ]
+        }
+    }
+
+}
