@@ -1,4 +1,4 @@
-# Laravel Mongodb (Support Transactions)
+# Laravel Mongodb (Transactional support)
 
 ### Introduction
 
